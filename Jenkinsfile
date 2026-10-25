@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
 
@@ -11,25 +10,25 @@ pipeline {
 
         stage('Install') {
             steps {
-                bat 'python -m pip install -r requirements.txt'
+                bat '"C:\\Users\\Jahnavi\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m pip install -r requirements.txt'
             }
         }
 
         stage('Test') {
             steps {
-                bat 'python -m pytest'
+                bat '"C:\\Users\\Jahnavi\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m pytest'
             }
         }
 
         stage('Compile') {
             steps {
-                bat 'python -m compileall .'
+                bat '"C:\\Users\\Jahnavi\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m compileall .'
             }
         }
 
         stage('Package') {
             steps {
-                bat 'python -m zipfile -c app-package.zip app.py test_app.py'
+                bat '"C:\\Users\\Jahnavi\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m zipfile -c app-package.zip app.py test_app.py'
             }
         }
     }
